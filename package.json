@@ -17,7 +17,13 @@
   },
   "homepage": "https://github.com/mkeef1/task-master",
   "dependencies": {
-    "express-method-override": "0.0.3"
+    "body-parser": "^1.6.0",
+    "express": "^4.8.0",
+    "express-method-override": "0.0.3",
+    "jade": "^1.5.0",
+    "lodash": "^2.4.1",
+    "mongodb": "^1.4.8",
+    "morgan": "^1.2.2"
   },
   "devDependencies": {
     "blanket": "^1.1.6",

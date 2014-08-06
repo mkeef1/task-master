@@ -1,0 +1,33 @@
+{
+  "name": "task-master",
+  "version": "0.0.0",
+  "description": "Task Manager App",
+  "main": "app/index.js",
+  "scripts": {
+    "test": "mocha test --recursive -R spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mkeef1/task-master"
+  },
+  "author": "Matt Keef",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mkeef1/task-master/issues"
+  },
+  "homepage": "https://github.com/mkeef1/task-master",
+  "dependencies": {
+    "express-method-override": "0.0.3"
+  },
+  "devDependencies": {
+    "blanket": "^1.1.6",
+    "chai": "^1.9.1",
+    "coveralls": "^2.11.1",
+    "grunt": "^0.4.5",
+    "grunt-contrib-jshint": "^0.10.0",
+    "grunt-contrib-watch": "^0.6.1",
+    "jshint-stylish": "^0.4.0",
+    "mocha": "^1.21.3",
+    "mocha-lcov-reporter": "0.0.1"
+  }
+}

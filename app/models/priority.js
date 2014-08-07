@@ -20,10 +20,12 @@ Priority.prototype.insert = function(cb){
 
 Priority.all = function(cb){
   Priority.collection.find().toArray(function(err, objects){
+
+    console.log(err, objects);
+
     var priorities = objects.map(function(o){
       return changePrototype(o);
     });
-
     cb(priorities);
   });
 };
@@ -37,9 +39,9 @@ Priority.findById = function(id, cb){
     cb(priority);
   });
 };
-module.exports = Priority;
 
 function changePrototype(obj){
   return _.create(Priority.prototype, obj);
 }
 
+module.exports = Priority;

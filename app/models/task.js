@@ -3,21 +3,22 @@
 var Mongo = require('mongodb');
 var _ = require('lodash');
 var moment = require('moment');
+//var Priority = require('./priority');
 
-function Task(t){
-  this.name = t.name;
-  this.due = moment(t.due).format('MM/DD/YYYY');
-  this.photo = t.photo;
-  this.isComplete = t.isComplete;
-  this.tags = t.tags;
-  this.priorityID = t.priorityID;
+function Task(tas){
+  this.name = tas.name;
+  this.due = moment(tas.due).format('MM/DD/YYYY');
+  this.photo = tas.photo;
+  this.isComplete = false;
+  this.tags = tas.tags;
+  this.priorityID = Mongo.ObjectID(tas.priorityID);
 }
 
 Object.defineProperty(Task, 'collection', {
   get: function(){return global.mongodb.collection('task');}
 });
 
-Task.prototype.insert = function(cb){
+Task.prototype.save = function(cb){
   Task.collection.save(this, cb);
 };
 
@@ -42,9 +43,9 @@ Task.all = function(cb){
 
 };
 
-module.exports = Task;
 
 function changePrototype(obj){
   return _.create(Task.prototype, obj);
 }
 
+module.exports = Task;

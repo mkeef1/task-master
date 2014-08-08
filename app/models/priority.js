@@ -14,7 +14,7 @@ Object.defineProperty(Priority, 'collection', {
   get: function(){return global.mongodb.collection('priorities');}
 });
 
-Priority.prototype.insert = function(cb){
+Priority.prototype.save = function(cb){
   Priority.collection.save(this, cb);
 };
 

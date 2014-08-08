@@ -1,0 +1,24 @@
+extends ../shared/template
+block content
+  #newtask
+    form(method="post", action="/tasks")
+      table
+        tr
+          td: label Name: 
+          td: input(type='text', name='name', placeholder='get milk')
+        tr
+          td: label Priority: 
+          td: select(name='priorityId')
+            each priority in priorities
+              option(value='#{priority._id}' style='background-color:#{priority.color}') #{priority.name}
+        tr
+          td: label Photo URL: 
+          td: input(type='text', name='photo')
+        tr
+          td: label Due: 
+          td: input(type='date', name='due', value='#{new Date()}')
+        tr
+          td: label Tags: 
+          td: input(type='text', name='tags', placeholder='food, dairy, liquid')
+        tr
+          td(colspan='2'): button Add
